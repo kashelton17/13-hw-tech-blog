@@ -3,7 +3,12 @@ const { Post, User } = require('../models')
 
 router.get('/', async (req, res) => {
     try {
+        if (!req.session.loggedIn) {
+            res.redirect('/login')
+        }
+        const userID = req.session.userid
         const postData = await Post.findAll({
+            where: {user_id: userID},
             include: [
                 {
                     model: User,
@@ -15,27 +20,21 @@ router.get('/', async (req, res) => {
             post.get({ plain: true}))
         )
         if (!posts) {
-            res.render('homepage')
+            res.render('dashboard', {
+                loggedIn: req.session.loggedIn,
+                userID: req.session.userid
+            })
         }
-        res.render('homepage', {
+        res.render('dashboard', {
             posts,
             loggedIn: req.session.loggedIn,
+            userID: req.session.userid
         })
     } catch (err) {
         console.log(err)
         res.status(500).json(err)
     }
 })
-
-
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-      res.redirect('/dashboard');
-      return;
-    }
-  
-    res.render('login');
-  });
 
 
 module.exports = router

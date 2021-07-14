@@ -1,8 +1,8 @@
 <section class="container">
   <h3 class="recent-posts">Recent Posts</h3>
   <section class="flex-row justify-center">
-    {{#each post.title as |title|}}
-    {{> post-details}}
+    {{#each posts as |post|}}
+    {{>post-details}}
     {{/each}}
   </section>
 </section>

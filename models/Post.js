@@ -5,7 +5,7 @@ class Post extends Model {}
 
 Post.init(
     {
-        tite: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -21,13 +21,10 @@ Post.init(
                 key: 'id'
             },
         },
-        created_on: {
-            type: DataTypes.DATE,
-            allowNull: false,
-        },
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'post',
