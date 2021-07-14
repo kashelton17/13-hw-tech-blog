@@ -1,0 +1,23 @@
+{{#if loggedIn}}
+<section class="single-post">
+  <div class="post-details">
+    <h3>{{post.title}}</h3>
+    <p>By: {{post.user.username}}</p>
+    <p>Exhibition open until: {{ post.content}}</p>
+  </div>
+  <div>
+    <H2>Comments:</H2>
+    {{#each post.comments as |comment|}}
+    {{>comment-details}}
+    {{/each}}
+  </div>
+  <form class="comment-form">
+      <label for="comment-input"></label>
+      <input type="text" id="comment-input" />
+      <button type="submit">Comment</button>
+  </form>
+</section>
+{{else}}
+<a href="/login">You must login first to view this page</a>
+{{/if}}
+<script src="/js/comment.js"
