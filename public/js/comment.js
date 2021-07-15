@@ -11,9 +11,7 @@ const commentFormHandler = async (event) => {
               },
         })
         if (response.ok) {
-            console.log(
-                'it worked'
-            )
+            document.location.reload()
         } else {
             alert('comment did not post')
         }

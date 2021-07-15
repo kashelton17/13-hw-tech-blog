@@ -54,6 +54,41 @@ router.get('/post/:id', async (req, res) => {
     }
 })
 
+router.delete('/post/:id', async (req, res) => {
+    try {
+        Post.destroy({
+            where: {
+                id: req.params.id,
+            },
+        })
+            .then((deletedPost) => {
+                res.status(200).json(deletedPost)
+        })  
+    } catch (err) {
+        console.log(err)
+        res.status(500).json(err)
+    }
+})
+
+router.put('/post/:id', async (req, res) => {
+    try {
+        const updatePost = await Post.update({
+            title: req.body.title,
+            content: req.body.content,
+            date_time: new Date().toString()
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        })
+        res.status(200).json(updatePost)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json(err)
+    }
+})
+
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
