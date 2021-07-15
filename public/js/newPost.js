@@ -2,17 +2,16 @@
 const postFormHandler = async (event) => {
     const content = document.querySelector('#new-post').value.trim()
     const title = document.querySelector('#title-post').value.trim()
-    const user = document.querySelector('#user-post').value.trim()
-    console.log(JSON.stringify({title, content}))
+    const user = document.querySelector('#user-id').textContent
+    console.log(JSON.stringify({title, content, user}))
 
     const response = await fetch(`/api/posts/`, {
         method: 'POST',
-        body: JSON.stringify({ title, content, }),
+        body: JSON.stringify({ title, content, user}),
         headers: {'Content-Type': 'application/json',},
     })
     console.log(response)
     if (response.ok) {
-        console.log('it works')
     } else {
         alert('could not post')
     }

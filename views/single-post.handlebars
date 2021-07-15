@@ -7,6 +7,13 @@
     <p>Blog Post: {{ post.content}}</p>
   </div>
   <div>
+    <h1>user_id{{user_id}}, post.user.id {{post.user.id}}</h1>
+    {{#ifEquals post.user.id user_id}}
+      <button type="button" class="button" id='update' value={{id}}>Edit Post</button>
+      <button type="button" class="button" id='delete' value={{id}}>Delete Post</button>
+    {{/ifEquals}}
+  </div>
+  <div>
     <H2>Comments:</H2>
     {{#each post.comments as |comment|}}
     {{>comment-details}}
@@ -21,4 +28,5 @@
 {{else}}
 <a href="/login">You must login first to view this page</a>
 {{/if}}
+<script src="/js/update.js"></script>
 <script src="/js/comment.js"

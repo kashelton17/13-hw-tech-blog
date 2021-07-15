@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['username']
+                    attributes: ['id','username']
                 }
             ]
         })
@@ -34,7 +34,7 @@ router.get('/post/:id', async (req, res) => {
                 {
                     model: User, 
                     attributes: [
-                        'username', 
+                        'id','username', 
                     ],
                 },
                 {
@@ -46,7 +46,7 @@ router.get('/post/:id', async (req, res) => {
             ]
         })
         const post = postData.get({ plain: true })
-        res.render('single-post', { post, loggedIn: req.session.loggedIn})
+        res.render('single-post', { post, loggedIn: req.session.loggedIn, user_id: req.session.user_id})
         console.log(post)
     } catch (err) {
         console.log(err)
@@ -56,6 +56,7 @@ router.get('/post/:id', async (req, res) => {
 
 router.delete('/post/:id', async (req, res) => {
     try {
+
         Post.destroy({
             where: {
                 id: req.params.id,
@@ -63,7 +64,8 @@ router.delete('/post/:id', async (req, res) => {
         })
             .then((deletedPost) => {
                 res.status(200).json(deletedPost)
-        })  
+        }) 
+        
     } catch (err) {
         console.log(err)
         res.status(500).json(err)
@@ -83,6 +85,7 @@ router.put('/post/:id', async (req, res) => {
             }
         })
         res.status(200).json(updatePost)
+
     } catch (err) {
         console.log(err)
         res.status(500).json(err)

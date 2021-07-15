@@ -2,14 +2,14 @@ const router = require('express').Router();
 const { Post, User } = require('../models')
 
 router.get('/', async (req, res) => {
-    console.log('user info', req.session.userInfo)
+    console.log('user info', req.session.user_id)
     try {
         if (!req.session.loggedIn) {
             res.redirect('/login')
         }
         ///const userID = req.session.userid
         const postData = await Post.findAll({
-            where: {user_id: 1},
+            where: {user_id: req.session.user_id},
             include: [
                 {
                     model: User,
