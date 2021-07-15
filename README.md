@@ -26,7 +26,7 @@ to install download repository
 
  
  ## Usage 
- To use this application just type npm start or follow the link
+ To use this application just type npm start or follow the link https://tech-blog-hw-14.herokuapp.com/
 
  
  ## License 
