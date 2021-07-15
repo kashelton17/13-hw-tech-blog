@@ -9,6 +9,10 @@ Comment.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        date_time: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,

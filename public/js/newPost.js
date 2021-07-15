@@ -1,6 +1,5 @@
 
 const postFormHandler = async (event) => {
-    event.preventDefault()
     const content = document.querySelector('#new-post').value.trim()
     const title = document.querySelector('#title-post').value.trim()
     const user = document.querySelector('#user-post').value.trim()

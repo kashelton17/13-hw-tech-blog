@@ -7,6 +7,7 @@ router.post('/', async (req, res) => {
       const newPostData = await Post.create({
           title: req.body.title,
           content: req.body.content,
+          date_time: new Date().toString(),
           user_id: 1
       });
       res.status(200).json(newPostData);
@@ -22,6 +23,7 @@ router.post('/comment', async (req, res) =>{
         console.log(req.body)
         const newComment = await Comment.create({
             content: req.body.comment,
+            date_time: new Date().toString(),
             user_id: 1,
             post_id: 1
         })

@@ -40,7 +40,7 @@ router.get('/post/:id', async (req, res) => {
                 {
                     model: Comment, 
                     attributes: [
-                        'content', 
+                        'content', 'user_id', 'date_time'
                     ],
                 },
             ]

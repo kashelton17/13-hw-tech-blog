@@ -1,6 +1,5 @@
 
 const commentFormHandler = async (event) => {
-    event.preventDefault()
     const comment = document.querySelector('#comment-input').value.trim()
 
     if (comment) {
