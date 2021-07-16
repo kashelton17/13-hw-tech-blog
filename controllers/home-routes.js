@@ -42,6 +42,7 @@ router.get('/post/:id', async (req, res) => {
                     attributes: [
                         'content', 'user_id', 'date_time'
                     ],
+                    include: [{model: User, attributes: ['username']}]
                 },
             ]
         })
