@@ -45,8 +45,11 @@ router.get('/post/:id', async (req, res) => {
                 },
             ]
         })
+        if (!postData) {
+            res.status(404).json('no post with that data')
+        }
         const post = postData.get({ plain: true })
-        res.render('single-post', { post, loggedIn: req.session.loggedIn, user_id: req.session.user_id})
+        res.render(`single-post`, { post, loggedIn: req.session.loggedIn, user_id: req.session.user_id})
         console.log(post)
     } catch (err) {
         console.log(err)
@@ -75,8 +78,7 @@ router.delete('/post/:id', async (req, res) => {
 router.put('/post/:id', async (req, res) => {
     try {
         const updatePost = await Post.update({
-            title: req.body.title,
-            content: req.body.content,
+            content: req.body.newContent,
             date_time: new Date().toString()
         },
         {
@@ -84,6 +86,7 @@ router.put('/post/:id', async (req, res) => {
                 id: req.params.id
             }
         })
+        console.log(updatePost)
         res.status(200).json(updatePost)
 
     } catch (err) {
