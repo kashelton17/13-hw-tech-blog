@@ -12,6 +12,7 @@ const postFormHandler = async (event) => {
     })
     console.log(response)
     if (response.ok) {
+        document.location.reload()
     } else {
         alert('could not post')
     }
