@@ -31,5 +31,7 @@
 {{/if}}
 
 <script src="/js/comment.js"></script>
+{{#ifEquals post.user.id user_id}}
 <script src="/js/update.js"></script>
 <script src="/js/delete.js"></script>
+{{/ifEquals}}
