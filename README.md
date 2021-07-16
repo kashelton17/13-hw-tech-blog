@@ -3,8 +3,9 @@
 
  
  ## Description 
- This application allows you to blog and see other's blogs as well as comment on them. You will be able to see edit and delete buttons on your own posts and not on others (functionality is yet to come for those buttons however) 
+ This application allows you to blog and see other's blogs as well as comment on them. You will be able to see edit and delete buttons on your own posts and not on others 
 
+ ![Preview Image](./public/images/previewImage1.png)
  
  ## Table of Contents 
 
