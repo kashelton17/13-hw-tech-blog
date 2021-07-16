@@ -1,0 +1,31 @@
+[
+    { "content": "Your blog is awesome!! Love it!",
+      "date_time": "7-13-2021 10:45pm",
+      "user_id": 1,
+      "post_id": 1
+    },
+    {
+      "content": "Tech IS very important",
+      "date_time": "7-13-2021 10:45pm",
+      "user_id": 3,
+      "post_id": 2
+    },
+    {
+      "content": "So True!",
+      "date_time": "7-12-2021 10:45pm",
+      "user_id": 4,
+      "post_id": 2
+    },
+    {
+      "content": "Blog 32 is very uninteresting #sorry",
+      "date_time": "7-12-2021 10:45pm",
+      "user_id": 2,
+      "post_id": 4
+    },
+    {
+      "content": "Wow!",
+      "date_time": "7-12-2021 10:45pm",
+      "user_id": 2,
+      "post_id": 5
+    }
+]

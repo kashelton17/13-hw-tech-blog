@@ -1,0 +1,37 @@
+[
+    {
+      "title": "Post1",
+      "date_time": "6-12-2021 7:30am",
+      "content": "My first post! Welcome to my blog!",
+      "user_id": 1
+      
+    },
+    {
+      "title": "Tech Stuff",
+      "date_time": "5-12-2021 7:30pm",
+      "content": "Tech is very important for stuff",
+      "user_id": 3
+      
+    },
+    {
+      "title": "Blog things",
+      "date_time": "7-12-2021 8:30pm",
+      "content": "The thing about blogs is that they have a lot of things in them",
+      "user_id": 4
+      
+    },
+    {
+      "title": "Blog 32",
+      "date_time": "7-10-2021 9:30pm",
+      "content": "Blog 32 is the most interesting blog of all time",
+      "user_id": 2
+      
+    },
+    {
+      "title": "My Blog",
+      "date_time": "7-12-2021 7:30pm",
+      "content": "This is a blog about my blog stuff and this is the content",
+      "user_id": 2
+      
+    }
+]
